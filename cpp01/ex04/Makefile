@@ -6,7 +6,7 @@
 #    By: mmomeni <mmomeni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 14:34:51 by mmomeni           #+#    #+#              #
-#    Updated: 2024/02/19 20:12:43 by mmomeni          ###   ########.fr        #
+#    Updated: 2024/02/22 17:11:50 by mmomeni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,5 +28,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+debug: CFLAGS += -g -fsanitize=address
+debug: all
 
 .PHONY: all clean fclean re bonus
