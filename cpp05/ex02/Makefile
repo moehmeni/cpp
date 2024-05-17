@@ -6,14 +6,14 @@
 #    By: mmomeni <mmomeni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 13:55:18 by mmomeni           #+#    #+#              #
-#    Updated: 2024/05/01 13:55:20 by mmomeni          ###   ########.fr        #
+#    Updated: 2024/05/04 14:43:11 by mmomeni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
-NAME=		abstract
+NAME=		form
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
-FUNCS=		Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+FUNCS=		Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 SRCS=		main.cpp $(FUNCS)
 
 all: $(NAME)

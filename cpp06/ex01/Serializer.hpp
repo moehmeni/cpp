@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmomeni <mmomeni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 13:56:43 by mmomeni           #+#    #+#             */
-/*   Updated: 2024/05/01 16:41:21 by mmomeni          ###   ########.fr       */
+/*   Created: 2024/05/13 18:09:47 by mmomeni           #+#    #+#             */
+/*   Updated: 2024/05/14 14:26:06 by mmomeni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "./Data.hpp"
 
-class Bureaucrat
+class Serializer
 {
 private:
-    std::string name;
-    int grade;
+    Serializer();
+    Serializer(const Serializer &src);
+    Serializer &operator=(const Serializer &src);
 
 public:
-    Bureaucrat();
-    Bureaucrat(Bureaucrat &copy);
-    ~Bureaucrat();
-    Bureaucrat &operator=(Bureaucrat &b);
-    std::string getName() const;
-    int getGrade() const;
-    void incrementGrade();
-    void decrementGrade();
-};
-
-class GradeTooHighException : public std::exception
-{
-public:
-    char *what();
-};
-
-class GradeTooLowException : public std::exception
-{
-public:
-    char *what();
+    ~Serializer();
+    static uintptr_t serialize(Data *ptr);
+    static Data *deserialize(uintptr_t raw);
 };
